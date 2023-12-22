@@ -48,9 +48,9 @@ const (
 	DIFF_MIN         = 3.0    // minimal dew point difference
 	HYSTERESIS       = 1.0    // difference between switching on/off
 	HUM_INSIDE_MIN   = 50.0   // minimal inside humidity, to have an active venting
-	TEMP_INSIDE_MIN  = 10.0   // minimal inside temperatur, to have an active venting
-	TEMP_OUTSIDE_MIN = -10.0  // minimal outside temperatur, to have an active venting
-	DEF_TEMP         = -200.0 // default temperatur
+	TEMP_INSIDE_MIN  = 10.0   // minimal inside temperature, to have an active venting
+	TEMP_OUTSIDE_MIN = -10.0  // minimal outside temperature, to have an active venting
+	DEF_TEMP         = -200.0 // default temperature
 	DEF_HUM          = -1.0   // default humidity
 	DATE_TIME_FORMAT = "2006-01-02 15:04:05"
 )
@@ -487,7 +487,6 @@ func main() {
 			fanIsOn = "ON "
 			fanStatus = true
 		}
-		//logger.Infof("Test: fanShouldBeOn is %t, fanIsOn is %s, fan status is %t", fanShouldBeOn, fanIsOn, fanStatus)
 		showIpAndOverride(fanIsOn)
 		if fanShouldBeOn != lastfanShouldBeOn || fanStatus != lastFanStatus || remoteOverride != lastRemoteOverride {
 			logger.Infof("Venting change: new state is %t, fan status %t, remote fanIsOn %d", fanShouldBeOn, fanStatus, remoteOverride)
